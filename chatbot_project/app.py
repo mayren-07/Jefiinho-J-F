@@ -2,7 +2,11 @@ import logging
 import boto3
 from flask import Flask, render_template, request, jsonify
 from botocore.exceptions import ClientError
+import os
+from dotenv import load_dotenv
 # from PyPDF2 import PdfReader
+
+load_dotenv()
 
 # Configuração de logging
 logger = logging.getLogger(__name__)
@@ -101,8 +105,8 @@ def ask():
         bedrock_client = boto3.client(
             service_name="bedrock-agent-runtime",
             region_name="us-west-2",
-            aws_access_key_id="",
-            aws_secret_access_key="",
+            aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
+            aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
         )
 
         # Gera a resposta do modelo
