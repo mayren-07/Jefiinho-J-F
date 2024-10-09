@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Chatbot - Hackaton</title>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/Jef.jpeg') }}" alt="Logo Esquerdo" class="logo">
+        <h1>Hackaton - AWS Gen AI Loft</h1>
+        <h3>Historia do Brasil até 2019</h3>
+        <img src="{{ url_for('static', filename='images/AWS.png') }}" alt="Logo Direito" class="logo">
+    </header>
+    <main>
+        <div id="chat-container">
+            <div id="chat-box"></div>
+            <div class="loading" id="loading">
+                <span class="loader"></span>Aguardando resposta...
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="input-button-container">
+            <input type="text" id="user-input" placeholder="Digite sua pergunta...">
+            <button id="send-button">Enviar</button>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('send-button').onclick = function() {
+            const userInput = document.getElementById('user-input').value;
+            if (!userInput) return;  
+
+            const chatBox = document.getElementById('chat-box');
+            const userMessageHTML = `
+                <div class="message user">
+                    <span>Você:</span>
+                    <p>${userInput}</p>
+                </div>
+            `;
+            chatBox.innerHTML += userMessageHTML;
+
+            document.getElementById('user-input').value = '';
+
+            const loading = document.getElementById('loading');
+            loading.style.display = 'block';
+
+            fetch('/ask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ question: userInput})
+            })
+            .then(response => response.json())
+            .then(data => {
+                loading.style.display = 'none';
+
+                const conversation = data.conversation;
+                console.log(conversation)
+                const messageHTML = `
+                    <div class="message chatbot">
+                        <span>Chatbot:</span>
+                        <p>${conversation[1].replace('Sorry, I am unable to assist you with this request.', 'Desculpe, não entendi a pergunta. Pergunte sobre fatos relacionados a história do Brasil')}</p>
+                    </div>
+                `;
+                chatBox.innerHTML += messageHTML;
+
+                chatBox.scrollTop = chatBox.scrollHeight;
+            });
+        };
+    </script>
+</body>
+</html>

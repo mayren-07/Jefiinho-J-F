@@ -1,0 +1,148 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f4f4f4; /* Cor de fundo suave */
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    color: black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0; /* Adicionando padding para o header */
+    border-bottom: 2px solid black; /* Borda preta na parte inferior do header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+main {
+    flex: 1;
+    margin-top: 80px; /* Deixar espaço para o header */
+    margin-bottom: 60px; /* Deixar espaço para o footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Mover para o início */
+    overflow: hidden; /* Evitar overflow */
+}
+
+#chat-container {
+    display: flex; /* Flexbox para alinhar o chat */
+    flex-direction: column; /* Alinhamento vertical */
+    justify-content: flex-start; /* Começar no topo */
+    height: 100%; /* Altura total */
+    overflow: hidden; /* Ocultar overflow */
+    padding: 10px; /* Padding para o contêiner do chat */
+}
+
+#chat-box {
+    flex: 1;
+    overflow-y: auto; /* Permitir rolagem vertical */
+    padding: 10px; /* Padding interno */
+    border: 1px solid #ddd; /* Borda do chat box */
+    border-radius: 5px; /* Bordas arredondadas no chat box */
+    background-color: #fafafa; /* Fundo suave para o chat box */
+    margin: 10px 0; /* Margem no chat box */
+}
+
+.message {
+    margin: 5px 0;
+    padding: 8px; /* Padding interno para mensagens */
+    border-radius: 5px; /* Bordas arredondadas para mensagens */
+    max-width: 70%; /* Limitar a largura das mensagens */
+    display: flex; /* Flexbox para alinhar o texto */
+    align-items: center; /* Centralizar verticalmente */
+    word-wrap: break-word; /* Quebrar palavras longas */
+}
+
+.user {
+    background-color: #e7f3fe; /* Fundo azul claro para mensagens do usuário */
+    color: #0c5460; /* Cor do texto do usuário */
+    align-self: flex-end; /* Alinha mensagens do usuário à direita */
+}
+
+.chatbot {
+    background-color: #d4edda; /* Fundo verde claro para mensagens do chatbot */
+    color: #155724; /* Cor do texto do chatbot */
+    align-self: flex-start; /* Alinha mensagens do chatbot à esquerda */
+}
+
+#user-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 70%; /* Largura do input */
+    flex-grow: 1; /* Ocupar espaço disponível */
+}
+
+#send-button {
+    background-color: #007bff; /* Cor azul */
+    color: #ffffff; /* Texto branco */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px; /* Arredondar as bordas do botão */
+}
+
+#send-button:hover {
+    background-color: #0069d9; /* Cor azul mais escura ao passar o mouse */
+}
+
+.input-button-container {
+    display: flex; /* Flexbox para alinhar input e botão */
+    align-items: center; /* Alinhar verticalmente */
+    padding: 10px; /* Adicionando padding */
+}
+
+.input-button-container > * {
+    margin: 0 10px; /* Margem entre input e botão */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Estilos para o carregamento */
+.loading {
+    display: none;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.loader {
+    border: 4px solid #f3f3f3; /* Cor da borda */
+    border-top: 4px solid #3498db; /* Cor do topo */
+    border-radius: 50%; /* Borda arredondada */
+    width: 16px; /* Largura do loader */
+    height: 16px; /* Altura do loader */
+    animation: spin 1s linear infinite; /* Animação de rotação */
+    display: inline-block; /* Bloco inline */
+    margin-right: 5px; /* Margem à direita */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
