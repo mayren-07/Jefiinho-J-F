@@ -2,14 +2,17 @@ import logging
 import boto3
 from flask import Flask, render_template, request, jsonify
 from botocore.exceptions import ClientError
-from PyPDF2 import PdfReader
+import os
+from dotenv import load_dotenv
+# from PyPDF2 import PdfReader
+
+load_dotenv()
 
 # Configuração de logging
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
 app = Flask(__name__)
-
 
 def generate_conversation(bedrock_client, model_id, messages):
     """Envia mensagens para o modelo."""
@@ -72,14 +75,14 @@ def generate_conversation(bedrock_client, model_id, messages):
     return response
 
 
-def read_pdf(file_path):
-    """Lê um arquivo PDF e retorna seu conteúdo como texto."""
-    with open(file_path, "rb") as file:
-        reader = PdfReader(file)
-        text = ""
-        for page in reader.pages:
-            text += page.extract_text()
-    return text
+# def read_pdf(file_path):
+#     """Lê um arquivo PDF e retorna seu conteúdo como texto."""
+#     with open(file_path, "rb") as file:
+#         reader = PdfReader(file)
+#         text = ""
+#         for page in reader.pages:
+#             text += page.extract_text()
+#     return text
 
 
 @app.route("/")
@@ -102,8 +105,8 @@ def ask():
         bedrock_client = boto3.client(
             service_name="bedrock-agent-runtime",
             region_name="us-west-2",
-            aws_access_key_id="chave_aqui",
-            aws_secret_access_key="chave_aqui esta no readme",
+            aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
+            aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
         )
 
         # Gera a resposta do modelo
@@ -134,4 +137,4 @@ def ask():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
