@@ -57,6 +57,7 @@ O login é necessário para garantir que apenas usuários autorizados possam int
    ```
    AWS_ACCESS_KEY_ID=seu_acesso
    AWS_SECRET_ACCESS_KEY=sua_chave
+   AWS_KNOWLEDGE_BASE_ID=seu_knowledge_base
    ```
 2. **Configuração da Autenticação**: A autenticação está configurada no código da aplicação com as credenciais fixas mencionadas acima.
 3. **Execução da aplicação**:
