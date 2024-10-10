@@ -17,6 +17,9 @@ Vídeo do Projeto Funcionando: O vídeo está disponível no diretório raiz com
 Pipelines (CI/CD): Disponíveis na esteira do GitHub Actions. Basta abrir a aba ACTIONS do repositório.
 
 Link do Projeto: Projeto no Render (Nota: O link pode não estar funcionando, pois a conta é temporária): https://jefiinho-jandf.onrender.com/.
+
+Caso de Uso: Localizado na pasta raiz do projeto 'caso-de-uso.txt'.
+
 Entregas:
 
     Arquitetura: (+100) ✔️
