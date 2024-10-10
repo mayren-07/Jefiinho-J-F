@@ -1,6 +1,6 @@
 import logging
 import boto3
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for, session
 from botocore.exceptions import ClientError
 import os
 from dotenv import load_dotenv
@@ -13,6 +13,12 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
 app = Flask(__name__)
+
+app.secret_key = os.getenv("SECRET_KEY", "minha_chave_secreta")  # Chave secreta para a sessão
+
+# Credenciais fixas
+USERNAME = "usuario"
+PASSWORD = "aws&chat"
 
 def generate_conversation(bedrock_client, model_id, messages):
     """Envia mensagens para o modelo."""
@@ -84,11 +90,35 @@ def generate_conversation(bedrock_client, model_id, messages):
 #             text += page.extract_text()
 #     return text
 
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        # Verifica as credenciais fornecidas
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+        if username == USERNAME and password == PASSWORD:
+            # Autenticação bem-sucedida
+            session["authenticated"] = True
+            return redirect(url_for("home"))
+        else:
+            # Autenticação falhou
+            return render_template("login.html", error="Credenciais inválidas. Tente novamente.")
+
+    return render_template("login.html")
 
 @app.route("/")
 def home():
+    # Verifica se o usuário está autenticado
+    if not session.get("authenticated"):
+        return redirect(url_for("login"))
     return render_template("index.html")
 
+@app.route("/logout")
+def logout():
+    # Finaliza a sessão e redireciona para a página de login
+    session.pop("authenticated", None)
+    return redirect(url_for("login"))
 
 @app.route("/ask", methods=["POST"])
 def ask():

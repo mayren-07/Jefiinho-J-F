@@ -11,8 +11,10 @@
         <img src="{{ url_for('static', filename='images/Jef.jpeg') }}" alt="Logo Esquerdo" class="logo">
         <h1>Hackaton - AWS Gen AI Loft</h1>
         <h3>História do Brasil até 2019</h3>
+        <a href="{{ url_for('logout') }}" style="float: right; margin: 10px;">Logout</a>
         <img src="{{ url_for('static', filename='images/AWS.png') }}" alt="Logo Direito" class="logo">
     </header>
+    
     <main>
         <div id="chat-container">
             <div id="chat-box"></div>

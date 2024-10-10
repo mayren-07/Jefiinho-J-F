@@ -20,6 +20,15 @@ O projeto é composto pelas seguintes partes principais:
 
 5. **Front-end**: O front-end da aplicação web foi desenvolvido com HTML, CSS e JavaScript, permitindo que os usuários façam perguntas diretamente na interface web e vejam as respostas geradas em tempo real.
 
+### Autenticação de Usuário
+
+A aplicação conta com uma tela de autenticação simples que requer login e senha fixos para acessar o chatbot. As credenciais são as seguintes:
+
+- **Usuário**: `usuario`
+- **Senha**: `aws&chat`
+
+O login é necessário para garantir que apenas usuários autorizados possam interagir com o chatbot. Após fornecer as credenciais corretas, o usuário é redirecionado para a interface do chat.
+
 ### Dependências
 
 - **Flask**: Framework web utilizado para construir a API e servir as páginas HTML.
@@ -29,14 +38,18 @@ O projeto é composto pelas seguintes partes principais:
 
 ### Endpoints
 
-- **GET /**: Rota principal que serve a página inicial do chatbot.
+- **GET /**: Rota principal que serve a página inicial do chatbot (após autenticação).
 - **POST /ask**: Rota que recebe a pergunta do usuário e faz uma chamada ao modelo de IA na AWS para gerar a resposta.
+- **GET /login**: Rota para exibição da tela de login.
+- **POST /login**: Rota para validação das credenciais do usuário.
+- **GET /logout**: Rota para encerrar a sessão e redirecionar o usuário para a tela de login.
 
 ### Exemplo de Interação com o Chatbot
 
-1. O usuário entra na interface web e insere uma pergunta, como "Quem foi Pedro Álvares Cabral?".
-2. A aplicação envia a pergunta para o modelo Claude-3 Haiku.
-3. A resposta é retornada pela IA com base no material de referência, ou uma resposta educada é fornecida caso a IA não possa encontrar a informação.
+1. O usuário acessa a tela de login e insere as credenciais corretas (usuário: `usuario`, senha: `aws&chat`).
+2. Após autenticar, o usuário entra na interface web e insere uma pergunta, como "Quem foi Pedro Álvares Cabral?".
+3. A aplicação envia a pergunta para o modelo Claude-3 Haiku.
+4. A resposta é retornada pela IA com base no material de referência, ou uma resposta educada é fornecida caso a IA não possa encontrar a informação.
 
 ### Configurações e Execução
 
@@ -45,7 +58,8 @@ O projeto é composto pelas seguintes partes principais:
    AWS_ACCESS_KEY_ID=seu_acesso
    AWS_SECRET_ACCESS_KEY=sua_chave
    ```
-2. **Execução da aplicação**:
+2. **Configuração da Autenticação**: A autenticação está configurada no código da aplicação com as credenciais fixas mencionadas acima.
+3. **Execução da aplicação**:
    - Instale as dependências listadas no arquivo `requirements.txt`.
    - Execute o servidor Flask com o comando:
      ```bash
