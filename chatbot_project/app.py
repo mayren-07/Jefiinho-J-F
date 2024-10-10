@@ -25,7 +25,7 @@ def generate_conversation(bedrock_client, model_id, messages):
     logger.info("Generating message with model %s", model_id)
 
     # Parâmetros de inferência
-    temperature = 0.5
+    temperature = 0.4
     top_k = 200
 
     # Configurações de inferência
