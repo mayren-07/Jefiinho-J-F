@@ -1,0 +1,28 @@
+Caso de Uso: Respostas Interativas Baseadas em PDF
+
+Objetivo:
+Desenvolver uma solução de IA que interprete e responda a perguntas baseadas no conteúdo de um documento PDF, que pode conter tanto textos quanto imagens. A IA deverá ser capaz de fornecer respostas claras e objetivas, utilizando não apenas o texto do PDF, mas também imagens relevantes extraídas do documento. Além disso, a IA deverá oferecer uma interação aprimorada com as imagens, como realçar elementos importantes, circular botões ou grifar textos, quando aplicável.
+
+
+Requisitos Funcionais:
+1. A IA deve ser capaz de interpretar tanto o texto quanto as imagens contidos no PDF.
+2. A IA deverá responder a perguntas dos usuários relacionadas ao conteúdo do PDF, com explicações claras e detalhadas.
+3. Quando a resposta envolver imagens, a IA deve ser capaz de fornecer essas imagens juntamente com as explicações.
+4. A IA deverá, opcionalmente, editar as imagens para facilitar o entendimento (por exemplo, circulando áreas importantes ou destacando textos).
+5. O sistema deve permitir que o usuário faça perguntas específicas sobre um tutorial ou procedimento descrito no PDF e receber uma resposta visualmente orientada.
+
+Exemplo Prático:
+- O PDF contém um guia com textos e imagens que explicam como fazer compras na Amazon.
+- O usuário faz a pergunta: "Como adicionar um produto ao carrinho na Amazon?"
+- A IA responde com uma explicação simples e direta, acompanhada de imagens extraídas do PDF. Se aplicável, a IA pode circular o botão "Adicionar ao carrinho" na imagem, destacando visualmente o elemento que deve ser clicado pelo usuário.
+
+Bônus:
+- Interações aprimoradas com as imagens, como:
+  - Circular botões importantes.
+  - Grifar ou destacar partes relevantes do texto.
+  - Apresentar imagens de forma sequencial para guiar o usuário em tutoriais ou procedimentos.
+
+Benefícios Esperados:
+- Explicações mais visuais e interativas que facilitam a compreensão do usuário.
+- Aprimoramento da experiência de aprendizado ao seguir tutoriais ou instruções contidas em PDFs.
+- Melhora na interação com documentos PDF complexos que contenham tutoriais com várias etapas.
