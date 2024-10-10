@@ -1,5 +1,38 @@
 ## Projeto Chatbot de História do Brasil
 
+### PARTICIPANTES INSTITUTO J&F - GRUPO JEFFINHO
+- João Lima
+- Mayla Renze
+- Rafaella Guimarães
+
+### INSTRUÇÕES
+
+Todas as entregas do hackathon estão disponíveis neste projeto.
+
+Frontend e Backend: 'chatbot_project'
+Lembre-se de criar e completar o arquivo .env.
+
+Vídeo do Projeto Funcionando: O vídeo está disponível no diretório raiz com o nome 'video-hackthon'.
+
+Pipelines (CI/CD): Disponíveis na esteira do GitHub Actions. Basta abrir a aba ACTIONS do repositório.
+
+Link do Projeto: Projeto no Render (Nota: O link pode não estar funcionando, pois a conta é temporária): https://jefiinho-jandf.onrender.com/.
+Entregas:
+
+    Arquitetura: (+100) ✔️
+    Aplicação Web - Front e Back: (+300) ✔️
+    Base de Conhecimento: (+100) ✔️
+    Agentes: (-100) ✖️
+    Repositório de Prompt: (+100) ✔️
+    Fluxo de Prompt: (-100) ✖️
+    Guardrails: (+100) ✔️
+    Autenticação: (+150) ✔️
+    Esteira CI/CD: (+150) ✔️
+    Repositório de Código: (+150) ✔️
+    Documentação: (+50) ✔️
+
+Resultado: 1200/1400
+
 ### Visão Geral
 
 Este projeto consiste na implementação de um chatbot baseado em Inteligência Artificial (IA) que responde perguntas sobre a História do Brasil até 2019. Ele foi desenvolvido utilizando a infraestrutura da AWS (Amazon Web Services) e a biblioteca **Flask** para o backend. A IA é alimentada por um modelo da **Anthropic Claude-3 Haiku**, selecionado por ser uma opção econômica e rápida, sem a necessidade de usar uma IA mais robusta e complexa, devido ao escopo limitado do projeto.
