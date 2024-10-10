@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -7,15 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <title>Chatbot - Hackaton</title>
 </head>
+
 <body>
     <header>
-        <img src="{{ url_for('static', filename='images/Jef.jpeg') }}" alt="Logo Esquerdo" class="logo">
+        <Div>
+            <img src="{{ url_for('static', filename='images/Jef.jpeg') }}" alt="Logo Esquerdo" class="logo">
+            <img src="{{ url_for('static', filename='images/AWS.png') }}" alt="Logo Direito" class="logo">
+        </Div>
         <h1>Hackaton - AWS Gen AI Loft</h1>
         <h3>História do Brasil até 2019</h3>
-        <a href="{{ url_for('logout') }}" style="float: right; margin: 15px; font-size: 15px;"><i class="fas fa-sign-out-alt"></i></a>
-        <img src="{{ url_for('static', filename='images/AWS.png') }}" alt="Logo Direito" class="logo">
+        <a href="{{ url_for('logout') }}" style="float: right; margin: 15px; font-size: 15px;"><i
+                class="fas fa-sign-out-alt"></i></a>
     </header>
-    
+
     <main>
         <div id="chat-container">
             <div id="chat-box"></div>
@@ -32,9 +37,9 @@
     </footer>
 
     <script>
-        document.getElementById('send-button').onclick = function() {
+        document.getElementById('send-button').onclick = function () {
             const userInput = document.getElementById('user-input').value;
-            if (!userInput) return;  
+            if (!userInput) return;
 
             const chatBox = document.getElementById('chat-box');
             const userMessageHTML = `
@@ -55,25 +60,26 @@
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ question: userInput})
+                body: JSON.stringify({ question: userInput })
             })
-            .then(response => response.json())
-            .then(data => {
-                loading.style.display = 'none';
+                .then(response => response.json())
+                .then(data => {
+                    loading.style.display = 'none';
 
-                const conversation = data.conversation;
-                console.log(conversation)
-                const messageHTML = `
+                    const conversation = data.conversation;
+                    console.log(conversation)
+                    const messageHTML = `
                     <div class="message chatbot">
                         <span>Chatbot:</span>
                         <p>${conversation[1].replace('Sorry, I am unable to assist you with this request.', 'Desculpe, não entendi a pergunta. Pergunte sobre fatos relacionados a história do Brasil')}</p>
                     </div>
                 `;
-                chatBox.innerHTML += messageHTML;
+                    chatBox.innerHTML += messageHTML;
 
-                chatBox.scrollTop = chatBox.scrollHeight;
-            });
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                });
         };
     </script>
 </body>
+
 </html>

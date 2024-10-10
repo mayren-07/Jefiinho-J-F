@@ -7,7 +7,6 @@ body {
     flex-direction: column;
     height: 100vh;
     background-color: #f4f4f4; 
-    margin-top: calc(80px + 20px);
 }
 
 header {
@@ -32,7 +31,6 @@ header {
 
 main {
     flex: 1;
-    margin-bottom: 60px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; 
@@ -208,12 +206,10 @@ footer {
     a {
         font-size: .5em;
     }
-    .logo {
-        display: none;
-    }
     #chat-container {
-        width: 85%;
+        width: 90%;
         margin: 80px auto;
-        margin-top: calc(100px + 20px);
+        margin-top: calc(100px + 1px);
+    
     }
 }
