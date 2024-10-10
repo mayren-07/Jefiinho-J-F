@@ -1,11 +1,11 @@
-## Projeto Chatbot de História do Brasil
+## Projeto Chatbot da História do Brasil
 
-### PARTICIPANTES INSTITUTO J&F - GRUPO JEFFINHO
+### Participantes Instituto J&F - Grupo Jeffinho 
 - João Lima
 - Mayla Renze
 - Rafaella Guimarães
 
-### INSTRUÇÕES
+### Instruções
 
 Todas as entregas do hackathon estão disponíveis neste projeto.
 
