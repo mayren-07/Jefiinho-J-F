@@ -1,4 +1,40 @@
-## Projeto Chatbot de História do Brasil
+## Projeto Chatbot da História do Brasil
+
+### Participantes Instituto J&F - Grupo Jeffinho 
+- João Lima (Account ID AWS 892392035640)
+- Mayla Renze (Account ID AWS 432704416414)
+- Rafaella Guimarães (Account ID AWS 918494868059)
+
+### Instruções
+
+Todas as entregas do hackathon estão disponíveis neste projeto.
+
+Frontend e Backend: 'chatbot_project'
+Lembre-se de criar e completar o arquivo .env.
+
+Vídeo do Projeto Funcionando: O vídeo está disponível no diretório raiz com o nome 'video-hackthon'.
+
+Pipelines (CI/CD): Disponíveis na esteira do GitHub Actions. Basta abrir a aba ACTIONS do repositório.
+
+Link do Projeto: Projeto no Render (Nota: O link pode não estar funcionando, pois a conta é temporária): https://jefiinho-jandf.onrender.com/.
+
+Caso de Uso: Localizado na pasta raiz do projeto 'caso-de-uso.txt'.
+
+Entregas:
+
+    Arquitetura: (+100) ✔️
+    Aplicação Web - Front e Back: (+300) ✔️
+    Base de Conhecimento: (+100) ✔️
+    Agentes: (-100) ✖️
+    Repositório de Prompt: (+100) ✔️
+    Fluxo de Prompt: (-100) ✖️
+    Guardrails: (+100) ✔️
+    Autenticação: (+150) ✔️
+    Esteira CI/CD: (+150) ✔️
+    Repositório de Código: (+150) ✔️
+    Documentação: (+50) ✔️
+
+Resultado: 1200/1400
 
 ### Visão Geral
 
