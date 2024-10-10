@@ -39,7 +39,7 @@ def generate_conversation(bedrock_client, model_id, messages):
         input=messages[0],
         retrieveAndGenerateConfiguration={
             "knowledgeBaseConfiguration": {
-                "knowledgeBaseId": "F7RNIUVKWU",
+                "knowledgeBaseId": os.getenv("AWS_KNOWLEDGE_BASE_ID"), # Chave para o knowledge base
                 "modelArn": "anthropic.claude-3-haiku-20240307-v1:0",
                 'generationConfiguration':{
                     'promptTemplate': {
