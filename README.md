@@ -1,9 +1,9 @@
 ## Projeto Chatbot da História do Brasil
 
 ### Participantes Instituto J&F - Grupo Jeffinho 
-- João Lima
-- Mayla Renze
-- Rafaella Guimarães
+- João Lima (Account ID AWS 892392035640)
+- Mayla Renze (Account ID AWS 432704416414)
+- Rafaella Guimarães (Account ID AWS 918494868059)
 
 ### Instruções
 
