@@ -14,7 +14,7 @@ Lembre-se de criar e completar o arquivo .env.
 
 Vídeo do Projeto Funcionando: O vídeo está disponível no diretório raiz com o nome 'video-hackthon'.
 
-Pipelines (CI/CD): Disponíveis na esteira do GitHub Actions. Basta abrir a aba ACTIONS do repositório.
+Pipelines (CI/CD): Disponíveis na esteira do GitHub Actions. Basta abrir a aba ACTIONS do repositório. Localizado no diretório '.github/workflows'.
 
 Link do Projeto: Projeto no Render (Nota: O link pode não estar funcionando, pois a conta é temporária): https://jefiinho-jandf.onrender.com/.
 
