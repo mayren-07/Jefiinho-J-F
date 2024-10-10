@@ -6,7 +6,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #f4f4f4; /* Cor de fundo suave */
+    background-color: #f4f4f4; 
+    margin-top: calc(80px + 20px);
 }
 
 header {
@@ -19,9 +20,9 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    padding: 10px 0; /* Adicionando padding para o header */
-    border-bottom: 2px solid black; /* Borda preta na parte inferior do header */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 10px 0; 
+    border-bottom: 2px solid black; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -31,53 +32,53 @@ header {
 
 main {
     flex: 1;
-    margin-top: 80px; /* Deixar espaço para o header */
-    margin-bottom: 60px; /* Deixar espaço para o footer */
+    margin-bottom: 60px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Mover para o início */
-    overflow: hidden; /* Evitar overflow */
+    justify-content: flex-start; 
+    overflow: hidden;
 }
 
 #chat-container {
-    display: flex; /* Flexbox para alinhar o chat */
-    flex-direction: column; /* Alinhamento vertical */
-    justify-content: flex-start; /* Começar no topo */
-    height: 100%; /* Altura total */
-    overflow: hidden; /* Ocultar overflow */
-    padding: 10px; /* Padding para o contêiner do chat */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start;
+    height: 80vh; 
+    overflow: hidden; 
+    padding: 10px; 
+    margin-top: calc(80px + 5px);
 }
 
 #chat-box {
     flex: 1;
-    overflow-y: auto; /* Permitir rolagem vertical */
-    padding: 10px; /* Padding interno */
-    border: 1px solid #ddd; /* Borda do chat box */
-    border-radius: 5px; /* Bordas arredondadas no chat box */
-    background-color: #fafafa; /* Fundo suave para o chat box */
-    margin: 10px 0; /* Margem no chat box */
+    overflow-y: auto; 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    background-color: #fafafa; 
+    margin: 10px 0; 
 }
 
 .message {
     margin: 5px 0;
-    padding: 8px; /* Padding interno para mensagens */
-    border-radius: 5px; /* Bordas arredondadas para mensagens */
-    max-width: 70%; /* Limitar a largura das mensagens */
-    display: flex; /* Flexbox para alinhar o texto */
-    align-items: center; /* Centralizar verticalmente */
-    word-wrap: break-word; /* Quebrar palavras longas */
+    padding: 8px; 
+    border-radius: 5px; 
+    max-width: 70%; 
+    display: flex; 
+    align-items: center;
+    word-wrap: break-word; 
 }
 
 .user {
-    background-color: #e7f3fe; /* Fundo azul claro para mensagens do usuário */
-    color: #0c5460; /* Cor do texto do usuário */
-    align-self: flex-end; /* Alinha mensagens do usuário à direita */
+    background-color: #e7f3fe; 
+    color: #0c5460; 
+    align-self: flex-end; 
 }
 
 .chatbot {
-    background-color: #d4edda; /* Fundo verde claro para mensagens do chatbot */
-    color: #155724; /* Cor do texto do chatbot */
-    align-self: flex-start; /* Alinha mensagens do chatbot à esquerda */
+    background-color: #d4edda; 
+    color: #155724;
+    align-self: flex-start; 
 }
 
 #user-input {
@@ -85,32 +86,32 @@ main {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 70%; /* Largura do input */
-    flex-grow: 1; /* Ocupar espaço disponível */
+    width: 70%; 
+    flex-grow: 1;
 }
 
 #send-button {
-    background-color: #007bff; /* Cor azul */
-    color: #ffffff; /* Texto branco */
+    background-color: #007bff; 
+    color: #ffffff;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 5px; /* Arredondar as bordas do botão */
+    border-radius: 5px; 
 }
 
 #send-button:hover {
-    background-color: #0069d9; /* Cor azul mais escura ao passar o mouse */
+    background-color: #0069d9;
 }
 
 .input-button-container {
-    display: flex; /* Flexbox para alinhar input e botão */
-    align-items: center; /* Alinhar verticalmente */
-    padding: 10px; /* Adicionando padding */
+    display: flex;
+    align-items: center; 
+    padding: 10px;
 }
 
 .input-button-container > * {
-    margin: 0 10px; /* Margem entre input e botão */
+    margin: 0 10px; 
 }
 
 footer {
@@ -123,7 +124,6 @@ footer {
     bottom: 0;
 }
 
-/* Estilos para o carregamento */
 .loading {
     display: none;
     margin: 10px 0;
@@ -132,17 +132,88 @@ footer {
 }
 
 .loader {
-    border: 4px solid #f3f3f3; /* Cor da borda */
-    border-top: 4px solid #3498db; /* Cor do topo */
-    border-radius: 50%; /* Borda arredondada */
-    width: 16px; /* Largura do loader */
-    height: 16px; /* Altura do loader */
-    animation: spin 1s linear infinite; /* Animação de rotação */
-    display: inline-block; /* Bloco inline */
-    margin-right: 5px; /* Margem à direita */
+    border: 4px solid #f3f3f3; 
+    border-top: 4px solid #3498db; 
+    border-radius: 50%; 
+    width: 16px; 
+    height: 16px; 
+    animation: spin 1s linear infinite; 
+    display: inline-block; 
+    margin-right: 5px; 
 }
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+@media only screen and (max-width: 480px) {
+    header {
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 1em;
+    }
+    h3 {
+        font-size: .7em;
+    }
+    a {
+        font-size: .5em;
+    }
+    .logo {
+        display: none;
+    }
+    #chat-container {
+        width: 85%;
+        margin: 80px auto;
+        margin-top: calc(100px + 20px);
+    }
+}
+
+/* Estilos para telas médias */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    header {
+        flex-direction: row;
+    }
+    h1 {
+        font-size: 1em;
+    }
+    h3 {
+        font-size: .7em;
+    }
+    a {
+        font-size: .5em;
+    }
+    .logo {
+        display: none;
+    }
+    #chat-container {
+        width: 85%;
+        margin: 80px auto;
+        margin-top: calc(100px + 20px);
+    }
+}
+
+/* Estilos para telas grandes */
+@media only screen and (min-width: 769px) {
+    header {
+        flex-direction: row;
+    }
+    h1 {
+        font-size: 1em;
+    }
+    h3 {
+        font-size: .7em;
+    }
+    a {
+        font-size: .5em;
+    }
+    .logo {
+        display: none;
+    }
+    #chat-container {
+        width: 85%;
+        margin: 80px auto;
+        margin-top: calc(100px + 20px);
+    }
 }
